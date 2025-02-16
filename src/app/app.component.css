@@ -1,0 +1,254 @@
+.app {
+    font-family: 'Poppins', Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    background-size: cover;
+    min-height: 100vh;
+    flex: 1;
+    border-radius: 10px;
+    padding: 0;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    background: #252526;
+    color: white;
+    padding: 15px;
+    font-size: 18px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.menu-icon {
+    cursor: pointer;
+    font-size: 22px;
+    margin-right: 15px;
+}
+
+.title-container {
+    flex-grow: 1;
+    text-align: center;
+}
+
+h1 {
+    font-size: 24px;
+    font-weight: bold;
+    font-family: 'Poppins', sans-serif;
+    color: #ffffff;
+}
+
+.sidebar {
+    position: fixed;
+    left: -260px;
+    max-width: 260px;
+    height: 100%;
+    background: #252526;
+    color: white;
+    padding: 15px;
+    transition: left 0.3s ease-in-out;
+    overflow: hidden;
+}
+
+.sidebar.open {
+    left: 0;
+}
+
+.sidebar ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.sidebar li {
+    padding: 12px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background 0.3s;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 16px;
+}
+
+.sidebar li:hover {
+    background: #373737;
+}
+
+.close-btn {
+    background: #ff4c4c;
+    border: none;
+    padding: 8px 12px;
+    color: white;
+    cursor: pointer;
+    font-size: 14px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    transition: background 0.3s;
+}
+
+.close-btn:hover {
+    background: #ff1c1c;
+}
+
+.todo-container {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1;
+    overflow-y: auto;
+}
+
+.search-input {
+    width: 80%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    background: #2a2a2a;
+    color: white;
+    text-align: center;
+}
+
+.task-input-container {
+    display: flex;
+    width: 80%;
+    gap: 10px;
+}
+
+.task-input {
+    flex-grow: 1;
+    padding: 12px;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    background: #2a2a2a;
+    color: white;
+}
+
+.add-btn {
+    padding: 12px 16px;
+    cursor: pointer;
+    background: #0078d4;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    transition: background 0.3s;
+    font-size: 16px;
+}
+
+.add-btn:hover {
+    background: #005ea6;
+}
+
+.task-list {
+    list-style: none;
+    padding: 0;
+    margin-top: 15px;
+    width: 80%;
+}
+
+.task-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px;
+    background: #5e5d5d;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    border-left: 5px solid transparent;
+    transition: border-left 0.3s, background 0.3s;
+}
+
+.task-item:hover {
+    border-left: 5px solid #0078d4;
+    background: #333333;
+}
+
+.circle-icon {
+    width: 24px;
+    height: 24px;
+    border: 2px solid black;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background 0.3s, border 0.3s;
+}
+
+.circle-icon.completed {
+    background: #0078d4;
+    border-color: #0078d4;
+}
+
+.task-actions button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    transition: color 0.3s;
+    color: #020202;
+}
+
+.important {
+    color: gold !important;
+}
+
+.task-actions button:hover {
+    color: #0078d4;
+}
+
+.footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 5px 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    font-size: 14px;
+}
+
+/* Contact Us Styling */
+.contact-menu {
+    background: #252526;
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    width: 80%;
+    margin: 20px auto;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.contact-menu form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.contact-menu input,
+.contact-menu textarea {
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    background: #2a2a2a;
+    color: white;
+}
+
+.contact-menu button {
+    background: #0078d4;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.contact-menu button:hover {
+    background: #005ea6;
+}

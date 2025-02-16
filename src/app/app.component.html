@@ -1,0 +1,81 @@
+<div class="app">
+  <!-- Header -->
+  <header class="header">
+    <span class="menu-icon" (click)="toggleSidebar()">
+      <i class="fa-solid fa-bars"></i>
+    </span>
+    <div class="title-container">
+      <h1>Pola To Do App</h1>
+    </div>
+  </header>
+ 
+  <!-- Sidebar -->
+  <div class="sidebar" [ngClass]="{ 'open': isSidebarVisible }">
+    <button class="close-btn" (click)="toggleSidebar()">
+      <i class="fa-solid fa-xmark"></i> Close
+    </button>
+    <ul>
+      <li (click)="showAllTasks()"><i class="fa-solid fa-calendar-day"></i> My Day</li>
+      <li (click)="toggleImportantView()"><i class="fa-solid fa-star"></i> Important</li>
+      <li (click)="toggleContactMenu()"><i class="fa-solid fa-envelope"></i> Contact Us</li>
+    </ul>
+  </div>
+
+  <div class="todo-container">
+    <!-- مربع البحث -->
+    <input [(ngModel)]="searchQuery" placeholder="Search tasks..." class="search-input" />
+
+    <!-- إدخال مهمة جديدة -->
+    <div class="task-input-container">
+      <input [(ngModel)]="newTask" placeholder="Add a task" class="task-input" />
+      <button class="add-btn" (click)="addTask()" [disabled]="!newTask.trim()">Add</button>
+    </div>
+
+    <!-- قائمة المهام -->
+    <ul class="task-list">
+      <li *ngFor="let task of displayedTasks; let i = index" class="task-item">
+        <span class="circle-icon" (click)="toggleTaskCompletion(i)" [ngClass]="{ 'completed': task.isCompleted }"></span>
+        <div class="task-content">
+          <p>{{ task.name }}</p>
+          <span class="task-subtitle">Tasks</span>
+        </div>
+        
+        <div class="task-actions">
+          <button (click)="toggleImportant(i)">
+            <i class="fa-solid fa-star" [class.important]="task.isImportant"></i>
+          </button>
+          
+          <button (click)="deleteTask(i)">
+            <i class="fa-solid fa-trash"></i>
+          </button>
+        </div>
+      </li>
+    </ul>
+  </div>
+  
+  <!-- Contact Us Form -->
+  <div *ngIf="isContactMenuOpen" class="contact-menu">
+    <div class="contact-container">
+      <h2>Contact Us</h2>
+      <p>
+        📧 Email: <a href="mailto:polamagedshawky@gmail.com">polamagedshawkygmail.com</a>
+      </p>
+      <p>
+        📞 Phone: <a href="tel:+201273691299">+20 127 369 1299</a>
+      </p>
+      
+      <!-- نموذج إرسال رسالة -->
+      <form (submit)="sendMessage()" class="contact-form">
+        <input type="text" placeholder="Your Name" [(ngModel)]="contactName" name="contactName" required>
+        <input type="email" placeholder="Your Email" [(ngModel)]="contactEmail" name="contactEmail" required>
+        <textarea placeholder="Your Message" [(ngModel)]="contactMessage" name="contactMessage" required></textarea>
+        <button type="submit" class="send-btn">Send</button>
+      </form>
+    </div>
+  </div>
+  
+  <!-- الفوتر -->
+  <footer class="footer">
+    <p>Made with ❤️ by Pola Maged | All rights reserved © 2025</p>
+  </footer>
+</div>
